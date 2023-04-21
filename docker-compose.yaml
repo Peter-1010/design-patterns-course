@@ -1,0 +1,8 @@
+version: '3.7'
+services:
+  app:
+    image: peter/design_pattern_image
+    restart: always
+    volumes:
+      - .:/usr/src/myapp
+    entrypoint: ["/bin/sleep", "infinity"]
