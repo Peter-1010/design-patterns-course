@@ -2,24 +2,22 @@
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-use App\OOP\PHP\Relationship\Teacher;
-use App\OOP\PHP\Relationship\ScienceTeacher;
-use App\OOP\PHP\Relationship\MathTeacher;
-use App\OOP\PHP\Relationship\Student;
-use App\OOP\PHP\Relationship\Printer\HTMLPrinter;
+use App\OOP\PHP\Relationship\Composition\House;
+use App\OOP\PHP\Relationship\Composition\Room;
 
-$mena = new ScienceTeacher("Mena Amen");
-$peter = new MathTeacher("Peter Anwer");
+$room1 = new Room('WHITE', 20);
 
-//$printer = new HTMLPrinter();
-//var_dump($peter->sayWelcome($printer));
-//unset($peter);
-//$printer->setStringToBePrinted("Test");
-//var_dump($printer->printToScreen());
+$room2 = new Room('LIGHT GRAY', 30);
 
-$poula = new Student("Poula Anwer");
+$room3 = new Room('LIGHT BLUE', 25);
 
-$poula->assignATempTeacher($peter);
-var_dump('Poula was assigned this by ' . $peter->getName() . ' | ' . $peter->evaluateStudentHomework($poula));
-$poula->assignATempTeacher($mena);
-var_dump('Poula was assigned this by ' . $mena->getName() . ' | ' . $peter->evaluateStudentHomework($poula));
+$house = new House([$room1, $room2, $room3]);
+
+// Inheritance IS-A
+// Manager IS-A Employee
+
+// Aggregation HAS-A
+// Project HAS-A Developer
+
+// Composition PART-OF
+// Room PART-OF House
